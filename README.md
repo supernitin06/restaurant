@@ -125,9 +125,3 @@ restaurant/
 
 n
 
-## 📞 Need Help?
-
-- Check the code comments
-- Look at the API routes
-- Review the component structure
-
