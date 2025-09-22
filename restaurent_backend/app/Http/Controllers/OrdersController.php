@@ -77,14 +77,14 @@ return response()->json([
 
         if ($request->filled('revenue')) {
             $query = Db::table('orders')->
-                selectRaw('DATE(order_time) as order_date, SUM(order_amount) as Total_collection in Rs')
+                selectRaw('DATE(order_time) as order_date, SUM(order_amount) as Total_collection')
                 ->where('restaurant_id', $restaurant->id)
                 ->groupBy(DB::raw('DATE(order_time)'))
                 ->orderBy('order_date', 'asc');
         }
         if ($request->filled('avg')) {
             $query = Db::table('orders')->
-                selectRaw(' AVG(order_amount) as total_revenur in Rs')
+                selectRaw(' AVG(order_amount) as total_revenur')
                 ->where('restaurant_id', $restaurant->id);
         }
         if ($request->filled('peakhours')) {
